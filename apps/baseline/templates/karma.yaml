@@ -12,6 +12,7 @@ spec:
     namespace: monitoring
   project: default
   source:
+    path: "."
     repoURL: https://github.com/ibelikov/helm-karma
     targetRevision: HEAD
   syncPolicy:
