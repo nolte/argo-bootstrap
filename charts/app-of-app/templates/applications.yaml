@@ -15,10 +15,10 @@ spec:
   project: default
   source:
 {{- toYaml $value.source | nindent 4 }}
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
-  syncOptions:
-    - CreateNamespace=true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 {{ end }}
