@@ -1,5 +1,12 @@
+# https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml
 argo-cd:
   installCRDs: false
   global:
     image:
       tag: v1.8.3
+  server:
+    config:
+      repositories: |
+        - type: helm
+          url: https://argoproj.github.io/argo-helm
+          name: argo
