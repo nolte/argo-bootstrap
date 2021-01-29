@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
+  name: baseline
   namespace: {{ .Release.Namespace }} 
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
     namespace: argocd
   project: default
   source:
-    path: apps/
+    path: apps/baseline
     repoURL: https://github.com/nolte/argo-bootstrap.git
     targetRevision: HEAD
   syncPolicy:
