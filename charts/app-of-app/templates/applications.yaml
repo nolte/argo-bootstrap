@@ -11,7 +11,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: $value.namespace
+    namespace: {{ $value.namespace }}
   project: default
   source:
 {{- toYaml $value.source | nindent 4 }}
