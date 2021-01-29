@@ -1,0 +1,5 @@
+argo-cd:
+  installCRDs: false
+  global:
+    image:
+      tag: v1.8.3
