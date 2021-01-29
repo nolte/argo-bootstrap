@@ -17,17 +17,18 @@ spec:
     helm:
       releaseName: monitoring
       values: |
-        kube-prometheus-stack:
-          namespace: monitoring
-          source:
-            chart: kube-prometheus-stack
-            repoURL: https://prometheus-community.github.io/helm-charts
-            targetRevision: 13.4.1
-            helm:
-              releaseName: monitoring
-              values: |
-                grafana:
-                  enabled: false
+        applications:
+          kube-prometheus-stack:
+            namespace: monitoring
+            source:
+              chart: kube-prometheus-stack
+              repoURL: https://prometheus-community.github.io/helm-charts
+              targetRevision: 13.4.1
+              helm:
+                releaseName: monitoring
+                values: |
+                  grafana:
+                    enabled: false
   syncPolicy:
     automated:
       prune: true
