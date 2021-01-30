@@ -21,9 +21,9 @@ spec:
           argocd-image-updater:
             namespace: argocd
             source:
-              path: manifests/base/
-              repoURL: https://github.com/argoproj-labs/argocd-image-updater/
-              targetRevision: v0.8.0
+              path: apps/argocd-image-updater/
+              repoURL: https://github.com/nolte/argo-bootstrap.git
+              targetRevision: HEAD
           #atlantis:
           #  namespace: atlantis
           #  source:
