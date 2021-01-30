@@ -6,25 +6,24 @@ patchesJSON6902:
 - target:
     kind: CustomResourceDefinition
     name: extensionservices.projectcontour.io
-    #namespace: undefined
   patch: |-
     - op: remove
       path: /spec/preserveUnknownFields
-#- target:
-#    kind: CustomResourceDefinition
-#    name: httpproxies.projectcontour.io
-#  patch: |-
-#    - op: remove
-#      path: /spec/preserveUnknownFields
-#- target:
-#    kind: CustomResourceDefinition
-#    name: tlscertificatedelegations.projectcontour.io
-#  patch: |-
-#    - op: remove
-#      path: /spec/preserveUnknownFields
+- target:
+    kind: CustomResourceDefinition
+    name: httpproxies.projectcontour.io
+  patch: |-
+    - op: remove
+      path: /spec/preserveUnknownFields
+- target:
+    kind: CustomResourceDefinition
+    name: tlscertificatedelegations.projectcontour.io
+  patch: |-
+    - op: remove
+      path: /spec/preserveUnknownFields
 
 resources:
   # - https://raw.githubusercontent.com/projectcontour/contour/main/examples/contour/01-crds.yaml
   - https://raw.githubusercontent.com/bitnami/charts/master/bitnami/contour/resources/extensionservices.yaml
-  #- https://raw.githubusercontent.com/bitnami/charts/master/bitnami/contour/resources/httpproxies.yaml
-  #- https://raw.githubusercontent.com/bitnami/charts/master/bitnami/contour/resources/tlscertificatedeligations.yaml
+  - https://raw.githubusercontent.com/bitnami/charts/master/bitnami/contour/resources/httpproxies.yaml
+  - https://raw.githubusercontent.com/bitnami/charts/master/bitnami/contour/resources/tlscertificatedeligations.yaml
