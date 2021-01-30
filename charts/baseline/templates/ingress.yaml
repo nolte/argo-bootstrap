@@ -23,6 +23,9 @@ spec:
           # https://github.com/bitnami/charts/blob/master/bitnami/contour/values.yaml
           contour:
             namespace: projectcontour
+            syncPolicyAutomated:
+              prune: true
+              selfHeal: true
             source:
               chart: contour
               repoURL: https://charts.bitnami.com/bitnami
@@ -42,6 +45,9 @@ spec:
           # https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml
           cert-manager:
             namespace: cert-manager
+            syncPolicyAutomated:
+              prune: true
+              selfHeal: true
             source:
               chart: cert-manager
               repoURL: https://charts.jetstack.io
@@ -54,12 +60,18 @@ spec:
                       enabled: true
           forecastle:
             namespace: opreators
+            syncPolicyAutomated:
+              prune: true
+              selfHeal: true
             source:
               path: deployments/kubernetes/chart/forecastle/
               repoURL: https://github.com/stakater/Forecastle
               targetRevision: v1.0.62
           reloader:
             namespace: opreators
+            syncPolicyAutomated:
+              prune: true
+              selfHeal: true
             source:
               path: deployments/kubernetes/chart/reloader/
               repoURL: https://github.com/stakater/Reloader
