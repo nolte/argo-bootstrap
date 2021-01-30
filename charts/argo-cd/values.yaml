@@ -62,6 +62,7 @@ argo-cd:
           ignoreDifferences: |
             jsonPointers:
             - /spec/0/preserveUnknownFields
+            - /spec/preserveUnknownFields
       repositories: |
         - type: helm
           url: https://argoproj.github.io/argo-helm
