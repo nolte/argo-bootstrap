@@ -18,6 +18,12 @@ spec:
       values: |
         applications:
           # 
+          argo-workflow:
+            namespace: argo
+            source:
+              path: manifests/cluster-install
+              repoURL: https://github.com/argoproj/argo/
+              targetRevision: v2.12.6          
           argocd-image-updater:
             namespace: argocd
             source:
