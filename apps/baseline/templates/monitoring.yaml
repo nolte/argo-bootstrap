@@ -29,6 +29,11 @@ spec:
                 values: |
                   grafana:
                     enabled: false
+            ignoreDifferences:
+            - kind: MutatingWebhookConfiguration
+              name: prometheusrulemutate.monitoring.coreos.com
+              jsonPointers:
+              - /spec/failurePolicy                    
   syncPolicy:
     automated:
       prune: true
