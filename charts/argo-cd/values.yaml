@@ -11,15 +11,16 @@ argo-cd:
       image: alpine:3.8
       command: [sh, -c]
       args:
-        - wget -qO- https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz | tar -xvzf - &&
-          mv linux-amd64/helm /custom-tools/
+        - wget -qO- https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.9.2/kustomize_v3.9.2_linux_amd64.tar.gz | tar -xvzf - &&
+          mv kustomize /custom-tools/kustomize_3_9_2
+          chmod +x /custom-tools/kustomize_3_9_2
       volumeMounts:
         - mountPath: /custom-tools
           name: custom-tools
-    volumeMounts:
-    - mountPath: /usr/local/bin/helm
-      name: custom-tools
-      subPath: helm
+#    volumeMounts:
+#    - mountPath: /usr/local/bin/helm
+#      name: custom-tools
+#      subPath: helm
   global:
     image:
       tag: v1.8.3
