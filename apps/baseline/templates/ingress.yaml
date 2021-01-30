@@ -17,7 +17,7 @@ spec:
     helm:
       values: |
         applications:
-          # https://bitnami.com/stack/contour/helm
+          # https://github.com/bitnami/charts/blob/master/bitnami/contour/values.yaml
           contour:
             namespace: projectcontour
             source:
@@ -25,7 +25,10 @@ spec:
               repoURL: https://charts.bitnami.com/bitnami
               targetRevision: 4.1.0
               helm:
-                values: | 
+                values: |
+                  prometheus:
+                    serviceMonitor:
+                      enabled: true
                   envoy:
                     service:
                       type: NodePort
@@ -53,12 +56,19 @@ spec:
             #  jsonPointers:
             #  - spec/preserveUnknownFields              
           # https://artifacthub.io/packages/helm/jetstack/cert-manager    
+          # https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml
           cert-manager:
             namespace: cert-manager
             source:
               chart: cert-manager
               repoURL: https://charts.jetstack.io
               targetRevision: v1.1.0
+              helm:
+                values: |
+                  prometheus:
+                    enabled: true
+                    servicemonitor:
+                      enabled: true
           forecastle:
             namespace: opreators
             source:
