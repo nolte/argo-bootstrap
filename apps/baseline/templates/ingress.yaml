@@ -36,9 +36,7 @@ spec:
             - group: apiextensions.k8s.io
               kind: CustomResourceDefinition
               jsonPointers:
-              - /undefined/extensionservices.projectcontour.io
-              - /undefined/httpproxies.projectcontour.io
-              - /undefined/tlscertificatedelegations.projectcontour.io              
+              - spec/preserveUnknownFields
           # https://artifacthub.io/packages/helm/jetstack/cert-manager    
           cert-manager:
             namespace: cert-manager
