@@ -16,9 +16,10 @@ spec:
   source:
 {{- toYaml $value.source | nindent 4 }}
   syncPolicy:
+{{- with $value.syncPolicy.automated }}
     automated:
-      prune: true
-      selfHeal: true
+    {{- toYaml . | nindent 6 }}
+  {{- end }}
     syncOptions:
       - CreateNamespace=true
   {{- with $value.ignoreDifferences }}
