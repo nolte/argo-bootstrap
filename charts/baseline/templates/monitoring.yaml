@@ -7,7 +7,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    name: {{ .Values.destinationName }}
     namespace: argocd
   project: default
   source:
@@ -18,6 +18,8 @@ spec:
       releaseName: monitoring
       values: |
         project: baseline
+        destinationName: {{ .Values.destinationName }}
+        depoymentDestinationName: {{ .Values.depoymentDestinationName }}        
         applications:
           kube-prometheus-stack:
             namespace: monitoring

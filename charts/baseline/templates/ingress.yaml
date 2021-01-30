@@ -18,6 +18,7 @@ spec:
       values: |
         project: baseline
         destinationName: {{ .Values.destinationName }}
+        depoymentDestinationName: {{ .Values.depoymentDestinationName }}
         applications:
           # https://github.com/bitnami/charts/blob/master/bitnami/contour/values.yaml
           contour:
