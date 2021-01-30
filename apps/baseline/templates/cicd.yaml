@@ -24,12 +24,12 @@ spec:
               path: manifests/base/
               repoURL: https://github.com/argoproj-labs/argocd-image-updater/
               targetRevision: v0.8.0
-          atlantis:
-            namespace: atlantis
-            source:
-              path: kustomize
-              repoURL: https://github.com/runatlantis/atlantis
-              targetRevision: v0.16.0
+          #atlantis:
+          #  namespace: atlantis
+          #  source:
+          #    path: kustomize
+          #    repoURL: https://github.com/runatlantis/atlantis
+          #    targetRevision: v0.16.0
           minio:
             namespace: minio
             source:
