@@ -24,7 +24,13 @@ spec:
               chart: contour
               repoURL: https://charts.bitnami.com/bitnami
               targetRevision: 4.1.0
-              # helm:
+              helm:
+                values: | 
+                  envoy:
+                    service:
+                      type: NodePort
+
+
           # https://artifacthub.io/packages/helm/jetstack/cert-manager    
           cert-manager:
             namespace: cert-manager
