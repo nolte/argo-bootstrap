@@ -29,8 +29,8 @@ spec:
                   envoy:
                     service:
                       type: NodePort
-
-
+                  contour:
+                    manageCRDs: false
           # https://artifacthub.io/packages/helm/jetstack/cert-manager    
           cert-manager:
             namespace: cert-manager
