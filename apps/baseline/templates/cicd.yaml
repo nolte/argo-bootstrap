@@ -36,6 +36,8 @@ spec:
               chart: minio
               repoURL: https://helm.min.io/
               targetRevision: 8.0.9
+              helm:
+                version: v3
   syncPolicy:
     automated:
       prune: true
