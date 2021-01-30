@@ -10,7 +10,7 @@ argo-cd:
         path: charts/baseline
         helm: 
           values: |
-            destinationName: kind-production
+            depoymentDestinationName: kind-production
       destination:
          name: in-cluster
          namespace: argocd

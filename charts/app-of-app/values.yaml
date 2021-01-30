@@ -1,5 +1,6 @@
 project: default
 destinationName: in-cluster
+depoymentDestinationName: in-cluster
 applicationGroup: unicon-group
 applications: {}
 #  kube-prometheus-stack:
