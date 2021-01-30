@@ -30,28 +30,28 @@ spec:
                     service:
                       type: NodePort
                   contour:
-                    customResourceDeletePolicy: before-hook-creation
-                    manageCRDs: true
+                    #customResourceDeletePolicy: before-hook-creation
+                    manageCRDs: false
             
-            ignoreDifferences:
-            - # group: apiextensions.k8s.io
-              kind: CustomResourceDefinition
-              name: extensionservices.projectcontour.io
-              # namespace: undefined
-              jsonPointers:
-              - spec/preserveUnknownFields
-            - # group: apiextensions.k8s.io
-              kind: CustomResourceDefinition
-              name: httpproxies.projectcontour.io
-              # namespace: undefined
-              jsonPointers:
-              - spec/preserveUnknownFields
-            - # group: apiextensions.k8s.io
-              kind: CustomResourceDefinition
-              name: tlscertificatedelegations.projectcontour.io
-              namespace: undefined
-              jsonPointers:
-              - spec/preserveUnknownFields              
+            #ignoreDifferences:
+            #- # group: apiextensions.k8s.io
+            #  kind: CustomResourceDefinition
+            #  name: extensionservices.projectcontour.io
+            #  # namespace: undefined
+            #  jsonPointers:
+            #  - spec/preserveUnknownFields
+            #- # group: apiextensions.k8s.io
+            #  kind: CustomResourceDefinition
+            #  name: httpproxies.projectcontour.io
+            #  # namespace: undefined
+            #  jsonPointers:
+            #  - spec/preserveUnknownFields
+            #- # group: apiextensions.k8s.io
+            #  kind: CustomResourceDefinition
+            #  name: tlscertificatedelegations.projectcontour.io
+            #  namespace: undefined
+            #  jsonPointers:
+            #  - spec/preserveUnknownFields              
           # https://artifacthub.io/packages/helm/jetstack/cert-manager    
           cert-manager:
             namespace: cert-manager
