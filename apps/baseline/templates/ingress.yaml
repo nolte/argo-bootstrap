@@ -24,6 +24,25 @@ spec:
               path: apps/contour-crds/
               repoURL: https://github.com/nolte/argo-bootstrap.git
               targetRevision: HEAD
+            ignoreDifferences:
+            - # group: apiextensions.k8s.io
+              kind: CustomResourceDefinition
+              name: extensionservices.projectcontour.io
+              # namespace: undefined
+              jsonPointers:
+              - /spec/preserveUnknownFields
+            - # group: apiextensions.k8s.io
+              kind: CustomResourceDefinition
+              name: httpproxies.projectcontour.io
+              # namespace: undefined
+              jsonPointers:
+              - /spec/preserveUnknownFields
+            - # group: apiextensions.k8s.io
+              kind: CustomResourceDefinition
+              name: tlscertificatedelegations.projectcontour.io
+              namespace: undefined
+              jsonPointers:
+              - /spec/preserveUnknownFields 
           contour:
             namespace: projectcontour
             source:
