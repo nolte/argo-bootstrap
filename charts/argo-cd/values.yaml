@@ -12,7 +12,7 @@ argo-cd:
       command: [sh, -c]
       args:
         - wget -qO- https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.9.2/kustomize_v3.9.2_linux_amd64.tar.gz | tar -xvzf - &&
-          mv kustomize /custom-tools/kustomize_3_9_2
+          mv kustomize /custom-tools/kustomize_3_9_2 &&
           chmod +x /custom-tools/kustomize_3_9_2
       volumeMounts:
         - mountPath: /custom-tools
