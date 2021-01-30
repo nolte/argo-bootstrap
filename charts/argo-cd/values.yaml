@@ -6,6 +6,7 @@ argo-cd:
       tag: v1.8.3
   server:
     config:
+      kustomize.version.v3.9.2: /custom-tools/kustomize_3_9_2      
       repositories: |
         - type: helm
           url: https://argoproj.github.io/argo-helm
