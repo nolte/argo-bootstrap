@@ -27,7 +27,10 @@ argo-cd:
   server:
     volumeMounts:
       - mountPath: /custom-tools
-        name: custom-tools  
+        name: custom-tools
+    volumes:
+    - name: custom-tools
+      emptyDir: {}
     config:
       kustomize.version.v3.9.2: /custom-tools/kustomize_3_9_2      
       repositories: |
