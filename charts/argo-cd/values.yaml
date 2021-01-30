@@ -1,6 +1,13 @@
 # https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml
 argo-cd:
   installCRDs: false
+  additionalProjects:
+    - name: baseline
+      namespace: argocd
+      description: Baseline Relevant Projects
+    - name: cicd
+      namespace: argocd
+      description: CICD Tools
   repoServer:
   # 2. Use an init container to download/copy custom binaries into the emptyDir
     volumes:
