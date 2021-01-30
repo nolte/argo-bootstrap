@@ -16,7 +16,7 @@ spec:
   source:
 {{- toYaml $value.source | nindent 4 }}
   syncPolicy:
-{{- with $value.syncPolicy.automated }}
+{{- with $value.syncPolicyAutomated }}
     automated:
     {{- toYaml . | nindent 6 }}
   {{- end }}
