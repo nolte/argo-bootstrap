@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cicd
+  namespace: {{ .Release.Namespace }} 
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  project: default
+  source:
+    path: charts/app-of-app
+    repoURL: https://github.com/nolte/argo-bootstrap.git
+    targetRevision: HEAD
+    helm:
+      values: |
+        applications:
+          # https://bitnami.com/stack/contour/helm
+          argocd-image-updater:
+            namespace: projectcontour
+            source:
+              path: manifests/base/
+              repoURL: https://github.com/argoproj-labs/argocd-image-updater/
+              targetRevision: 0.8.0
+          atlantis:
+            namespace: atlantis
+            source:
+              path: kustomize
+              repoURL: https://github.com/runatlantis/atlantis
+              targetRevision: 0.16.0
+          minio:
+            namespace: minio
+            source:
+              chart: minio
+              repoURL: https://helm.min.io/
+              targetRevision: 8.0.9
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
