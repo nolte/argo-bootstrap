@@ -28,19 +28,25 @@ argo-cd:
       - name: baseline
         namespace: argocd
         description: Baseline Relevant Projects
+        clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'
+        destinations:
+        - namespace: '*'
+          server: '*'
         sourceRepos:
         - '*'
-        destinations:  
-        - namespace: argocd 
-          server: https://kubernetes.default.svc
       - name: cicd
         namespace: argocd
         description: CICD Tools
+        clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'
+        destinations:
+        - namespace: '*'
+          server: '*'
         sourceRepos:
         - '*'
-        destinations:  
-        - namespace: argocd 
-          server: https://kubernetes.default.svc
     config:
       kustomize.version.v3.9.2: /custom-tools/kustomize_3_9_2      
       resource.customizations: |
