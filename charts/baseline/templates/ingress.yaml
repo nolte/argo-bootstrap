@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress
+  name: {{.Values.prefix}}ingress
   namespace: {{ .Release.Namespace }} 
   finalizers:
   - resources-finalizer.argocd.argoproj.io
