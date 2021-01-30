@@ -20,7 +20,7 @@ metadata:
     {{- end }}
 spec:
   destination:
-    server: {{ $dot.Values.destinationServer }} 
+    name: {{ $dot.Values.destinationName }} 
     namespace: {{ $value.namespace }}
   project: {{ $dot.Values.project }} 
   source:

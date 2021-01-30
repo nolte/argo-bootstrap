@@ -7,7 +7,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    name: {{ .Values.destinationName }}
     namespace: argocd
   project: default
   source:
@@ -17,6 +17,7 @@ spec:
     helm:
       values: |
         project: baseline
+        destinationName: {{ .Values.destinationName }}
         applications:
           # https://github.com/bitnami/charts/blob/master/bitnami/contour/values.yaml
           contour:

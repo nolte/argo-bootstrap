@@ -1,0 +1,22 @@
+argo-cd:
+  server:
+    additionalApplications:
+    - name: prd-baseline
+      namespace: argocd
+      project: cicd
+      source:
+        repoURL: https://github.com/nolte/argo-bootstrap.git
+        targetRevision: HEAD
+        path: charts/baseline
+        helm: 
+          values: |
+            destinationName: kind-production
+      destination:
+         name: in-cluster
+         namespace: argocd
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: false
+        syncOptions:
+          - CreateNamespace=true
