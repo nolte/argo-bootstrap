@@ -8,6 +8,16 @@ metadata:
   namespace: {{ $dot.Release.Namespace }} 
   finalizers:
   - resources-finalizer.argocd.argoproj.io
+  {{- with $value.additionalAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- $obj :=  dict "dot" $dot "app" $value -}}
+    {{- include "common.labels" $obj | nindent 4 }}
+    {{- with $value.additionalLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   destination:
     server: {{ $dot.Values.destinationServer }} 
