@@ -53,7 +53,7 @@ spec:
           reloader:
             namespace: opreators
             source:
-              path: deployments/kubernetes/chart/forecastle/
+              path: deployments/kubernetes/chart/reloader/
               repoURL: https://github.com/stakater/Reloader
               targetRevision: v0.0.79
   syncPolicy:
