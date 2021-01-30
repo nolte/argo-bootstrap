@@ -18,6 +18,12 @@ spec:
       values: |
         applications:
           # https://github.com/bitnami/charts/blob/master/bitnami/contour/values.yaml
+          contour-crds:
+            namespace: undefined
+            source:
+              path: apps/contour-crds/
+              repoURL: https://github.com/nolte/argo-bootstrap.git
+              targetRevision: HEAD
           contour:
             namespace: projectcontour
             source:
