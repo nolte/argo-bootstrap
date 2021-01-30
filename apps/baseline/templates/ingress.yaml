@@ -30,7 +30,13 @@ spec:
                     service:
                       type: NodePort
                   contour:
-                    manageCRDs: false
+                    manageCRDs: true
+#            spec:
+#              ignoreDifferences:
+#              - group: apps
+#                kind: Deployment
+#                jsonPointers:
+#                - /spec/replicas
           # https://artifacthub.io/packages/helm/jetstack/cert-manager    
           cert-manager:
             namespace: cert-manager

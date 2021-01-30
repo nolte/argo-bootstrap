@@ -21,4 +21,8 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+  {{- with $value.ignoreDifferences }}
+  ignoreDifferences:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 {{ end }}
