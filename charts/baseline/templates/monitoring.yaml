@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitoring
+  name: {{.Values.prefix}}monitoring
   namespace: {{ .Release.Namespace }} 
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -9,19 +9,18 @@ spec:
   destination:
     name: {{ .Values.destinationName }}
     namespace: argocd
-  project: default
+  project: baseline
   source:
     path: charts/app-of-app
     repoURL: https://github.com/nolte/argo-bootstrap.git
     targetRevision: HEAD
     helm:
-      releaseName: monitoring
       values: |
         project: baseline
         destinationName: {{ .Values.destinationName }}
         depoymentDestinationName: {{ .Values.depoymentDestinationName }}        
         applications:
-          kube-prometheus-stack:
+          {{.Values.prefix}}kube-prometheus-stack:
             namespace: monitoring
             syncPolicyAutomated:
               prune: true

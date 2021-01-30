@@ -9,7 +9,7 @@ spec:
   destination:
     name: {{ .Values.destinationName }}
     namespace: argocd
-  project: default
+  project: baseline
   source:
     path: charts/app-of-app
     repoURL: https://github.com/nolte/argo-bootstrap.git
@@ -21,7 +21,7 @@ spec:
         depoymentDestinationName: {{ .Values.depoymentDestinationName }}
         applications:
           # https://github.com/bitnami/charts/blob/master/bitnami/contour/values.yaml
-          contour:
+          {{.Values.prefix}}contour:
             namespace: projectcontour
             syncPolicyAutomated:
               prune: true
@@ -43,7 +43,7 @@ spec:
                 version: v3
           # https://artifacthub.io/packages/helm/jetstack/cert-manager    
           # https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml
-          cert-manager:
+          {{.Values.prefix}}cert-manager:
             namespace: cert-manager
             syncPolicyAutomated:
               prune: true
@@ -58,7 +58,7 @@ spec:
                     enabled: true
                     servicemonitor:
                       enabled: true
-          forecastle:
+          {{.Values.prefix}}forecastle:
             namespace: opreators
             syncPolicyAutomated:
               prune: true
@@ -67,7 +67,7 @@ spec:
               path: deployments/kubernetes/chart/forecastle/
               repoURL: https://github.com/stakater/Forecastle
               targetRevision: v1.0.62
-          reloader:
+          {{.Values.prefix}}reloader:
             namespace: opreators
             syncPolicyAutomated:
               prune: true

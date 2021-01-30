@@ -10,7 +10,27 @@ argo-cd:
         path: charts/baseline
         helm: 
           values: |
+            prefix: prd-
             depoymentDestinationName: kind-production
+      destination:
+         name: in-cluster
+         namespace: argocd
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: false
+        syncOptions:
+          - CreateNamespace=true
+    - name: baseline
+      namespace: argocd
+      project: cicd
+      source:
+        repoURL: https://github.com/nolte/argo-bootstrap.git
+        targetRevision: HEAD
+        path: charts/baseline
+        helm: 
+          values: |
+            prefix: bootstrap-
       destination:
          name: in-cluster
          namespace: argocd
