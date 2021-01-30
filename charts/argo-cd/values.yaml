@@ -35,6 +35,10 @@ argo-cd:
           ignoreDifferences: |
             jsonPointers:
             - /webhooks/0/failurePolicy
+        apiextensions.k8s.io/CustomResourceDefinition:
+          ignoreDifferences: |
+            jsonPointers:
+            - /spec/0/preserveUnknownFields
       repositories: |
         - type: helm
           url: https://argoproj.github.io/argo-helm
