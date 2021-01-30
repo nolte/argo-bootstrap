@@ -17,6 +17,7 @@ spec:
     helm:
       releaseName: monitoring
       values: |
+        project: baseline
         applications:
           kube-prometheus-stack:
             namespace: monitoring
@@ -28,12 +29,7 @@ spec:
                 releaseName: monitoring
                 values: |
                   grafana:
-                    enabled: false
-            ignoreDifferences:
-            - kind: MutatingWebhookConfiguration
-              name: prometheusrulemutate.monitoring.coreos.com
-              jsonPointers:
-              - /spec/failurePolicy                    
+                    enabled: false                   
   syncPolicy:
     automated:
       prune: true

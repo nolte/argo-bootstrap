@@ -16,8 +16,8 @@ spec:
     targetRevision: HEAD
     helm:
       values: |
+        project: cicd
         applications:
-          # 
           argo-workflow:
             namespace: argo
             source:

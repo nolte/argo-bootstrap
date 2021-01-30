@@ -16,6 +16,7 @@ spec:
     targetRevision: HEAD
     helm:
       values: |
+        project: baseline
         applications:
           # https://github.com/bitnami/charts/blob/master/bitnami/contour/values.yaml
           contour:

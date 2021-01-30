@@ -1,3 +1,5 @@
+project: default
+destinationServer: https://kubernetes.default.svc
 applications: {}
 #  kube-prometheus-stack:
 #    namespace: monitoring
