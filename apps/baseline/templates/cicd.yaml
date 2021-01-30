@@ -17,9 +17,9 @@ spec:
     helm:
       values: |
         applications:
-          # https://bitnami.com/stack/contour/helm
+          # 
           argocd-image-updater:
-            namespace: projectcontour
+            namespace: argocd
             source:
               path: manifests/base/
               repoURL: https://github.com/argoproj-labs/argocd-image-updater/
