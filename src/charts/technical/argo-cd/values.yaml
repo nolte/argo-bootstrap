@@ -110,3 +110,6 @@ argo-cd:
         - type: helm
           url: https://halkeye.github.io/helm-charts/
           name: halkeye
+        - type: helm
+          url: https://mojo2600.github.io/pihole-kubernetes/
+          name: pihole
