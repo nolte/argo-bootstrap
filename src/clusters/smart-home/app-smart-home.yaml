@@ -8,7 +8,7 @@ spec:
   destination:
     name: in-cluster
     namespace: argocd
-  project: default
+  project: seed
   source:
     repoURL: https://github.com/nolte/argo-bootstrap
     targetRevision: HEAD

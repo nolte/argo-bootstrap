@@ -3,7 +3,7 @@ argo-cd:
     additionalApplications: 
     - name: seed-prd
       namespace: argocd
-      project: default
+      project: seed
       source:
         repoURL: https://github.com/nolte/argo-bootstrap.git
         targetRevision: HEAD
@@ -19,7 +19,7 @@ argo-cd:
           - CreateNamespace=true
     - name: seed-smart-home
       namespace: argocd
-      project: default
+      project: seed
       source:
         repoURL: https://github.com/nolte/argo-bootstrap.git
         targetRevision: HEAD
@@ -35,7 +35,7 @@ argo-cd:
           - CreateNamespace=true
     - name: seed-devops
       namespace: argocd
-      project: default
+      project: seed
       source:
         repoURL: https://github.com/nolte/argo-bootstrap.git
         targetRevision: HEAD

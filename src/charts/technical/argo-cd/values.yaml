@@ -60,6 +60,17 @@ argo-cd:
           server: '*'
         sourceRepos:
         - '*'
+      - name: seed
+        namespace: argocd
+        description: CICD Seed Jobs
+        clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'
+        destinations:
+        - namespace: '*'
+          server: '*'
+        sourceRepos:
+        - '*'
       - name: cicd
         namespace: argocd
         description: CICD Tools
