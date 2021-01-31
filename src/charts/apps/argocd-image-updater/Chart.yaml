@@ -1,6 +1,0 @@
-apiVersion: v2
-name: argocd-image-updater
-version: 1.0.0
-dependencies:
-  - name: commonApp
-    repository: file://../../technical/commonApp/

@@ -1,3 +1,4 @@
 kustomize 3.9.2
 vendir 0.15.0
 python 3.7.1 
+task 3.2.2

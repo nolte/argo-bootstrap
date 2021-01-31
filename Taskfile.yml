@@ -1,0 +1,15 @@
+---
+version: '3'
+
+vars:
+  GIT_ROOT:
+    sh: git rev-parse --show-toplevel
+
+includes:
+  kind: .taskfiles/Taskfile_kind.yml
+
+tasks:
+  default:
+    cmds:
+    - task -l
+    silent: true

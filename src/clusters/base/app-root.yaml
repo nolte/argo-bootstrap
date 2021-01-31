@@ -13,6 +13,8 @@ spec:
     path: src/charts/technical/collection-baseline
     repoURL: https://github.com/nolte/argo-bootstrap.git
     targetRevision: HEAD
+    helm:
+      version: v3
   syncPolicy:
     automated:
       prune: true

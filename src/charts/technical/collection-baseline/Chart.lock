@@ -1,12 +1,12 @@
 dependencies:
 - name: project-contour
-  repository: file://../../apps/project-contour
-  version: 1.0.0
+  repository: https://nolte.github.io/argo-charts/
+  version: 1.1.0
 - name: cert-manager
-  repository: file://../../apps/cert-manager
-  version: 1.0.0
+  repository: https://nolte.github.io/argo-charts/
+  version: 1.1.0
 - name: monitoring
-  repository: file://../../apps/monitoring
-  version: 1.0.0
-digest: sha256:cef3e902b126c0b3b5a853b2ccab548035c666c86e75e64221592bceadc21cdf
-generated: "2021-01-31T15:09:47.336184789+01:00"
+  repository: https://nolte.github.io/argo-charts/
+  version: 1.1.0
+digest: sha256:7d09a7d8a920d92eaa50b1e16c792cdee6041b1683933aa93d027fe29e9888e8
+generated: "2021-01-31T16:59:57.386425613+01:00"

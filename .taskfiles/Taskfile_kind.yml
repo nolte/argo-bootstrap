@@ -1,0 +1,11 @@
+---
+version: '3'
+
+tasks:
+
+  create:
+    desc: create cluster
+    cmds:
+    - echo "create kind cluster"
+    silent: true
+
