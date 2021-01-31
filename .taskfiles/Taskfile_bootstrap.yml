@@ -1,0 +1,24 @@
+---
+version: '3'
+
+tasks:
+
+  boostrap-argocd:
+    desc: install/update boostrap argocd
+    cmds:
+    - |
+      helm upgrade \
+        -i argo-cd {{.GIT_ROOT}}/src/charts/technical/argo-cd/ \
+        -n argocd --create-namespace \
+        -f {{.GIT_ROOT}}/src/charts/technical/argo-cd/values.yaml \
+        -f {{.GIT_ROOT}}/src/charts/technical/argo-cd/values-bootstrap.yaml \
+        --wait
+    silent: true
+
+  boostrap-argo-jobs:
+    desc: install/update boostrap argocd jobs
+    cmds:
+    - |
+      kustomize build /home/nolte/repos-ansible/playground/argo-bootstrap/src/clusters/base | kubectl apply -f -
+    silent: true
+

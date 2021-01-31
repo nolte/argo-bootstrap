@@ -10,12 +10,17 @@ spec:
     namespace: argocd
   project: default
   source:
+    #path: src/charts/technical/collection-baseline
+    #chart: project-contour
+    #repoURL: https://nolte.github.io/argo-charts/
+    #targetRevision: 1.2.0
+    repoURL: https://github.com/nolte/argo-bootstrap
+    targetRevision: head
     path: src/charts/technical/collection-baseline
-    repoURL: https://github.com/nolte/argo-bootstrap.git
-    targetRevision: HEAD
     helm:
-      version: v3
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+      releaseName: contour
+      version: v3.5.1
+  syncPolicy: {}
+#    automated: {}
+#      prune: true
+#      selfHeal: true

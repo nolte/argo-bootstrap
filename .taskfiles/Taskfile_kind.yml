@@ -4,8 +4,15 @@ version: '3'
 tasks:
 
   create:
-    desc: create cluster
+    desc: create clusters
     cmds:
-    - echo "create kind cluster"
+    - kind create cluster \
+      --config {{.GIT_ROOT}}/local/kind.yaml \
+      --name production \
+    - kind create cluster \
+        --config {{.GIT_ROOT}}/local/kind-public-apiserver.yaml \
+        --name local-bootstrapper
     silent: true
+
+
 
