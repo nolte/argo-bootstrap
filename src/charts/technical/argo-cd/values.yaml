@@ -106,4 +106,7 @@ argo-cd:
           name: minio
         - type: helm
           url: https://nolte.github.io/argo-charts/
-          name: argo-charts          
+          name: argo-charts
+        - type: helm
+          url: https://halkeye.github.io/helm-charts/
+          name: halkeye
