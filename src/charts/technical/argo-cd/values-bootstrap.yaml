@@ -17,6 +17,22 @@ argo-cd:
           selfHeal: false
         syncOptions:
           - CreateNamespace=true
+    - name: seed-smart-home
+      namespace: argocd
+      project: default
+      source:
+        repoURL: https://github.com/nolte/argo-bootstrap.git
+        targetRevision: HEAD
+        path: src/clusters/smart-home
+      destination:
+         name: in-cluster
+         namespace: argocd
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: false
+        syncOptions:
+          - CreateNamespace=true
     - name: devops
       namespace: argocd
       project: default

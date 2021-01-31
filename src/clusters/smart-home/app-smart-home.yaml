@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: smart-home
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name: in-cluster
+    namespace: argocd
+  project: default
+  source:
+    repoURL: https://github.com/nolte/argo-bootstrap
+    targetRevision: HEAD
+    path: src/charts/technical/collection-smart-home
+    helm:
+      releaseName: smart-home
+      version: v3.5.1
+  syncPolicy: {}
+#    automated: {}
+#      prune: true
+#      selfHeal: true
