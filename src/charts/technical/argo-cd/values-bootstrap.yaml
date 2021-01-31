@@ -7,7 +7,7 @@ argo-cd:
       source:
         repoURL: https://github.com/nolte/argo-bootstrap.git
         targetRevision: HEAD
-        path: src/clusters/devops      
+        path: src/clusters/production      
       destination:
          name: in-cluster
          namespace: argocd
