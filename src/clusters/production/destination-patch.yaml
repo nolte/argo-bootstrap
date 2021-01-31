@@ -15,4 +15,3 @@ spec:
         monitoring:
           destination:
             name: kind-production
-    name: kind-production
