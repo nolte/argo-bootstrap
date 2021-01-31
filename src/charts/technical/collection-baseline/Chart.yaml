@@ -1,0 +1,12 @@
+apiVersion: v2
+name: collection-baseline
+version: 1.0.0
+dependencies:
+  - name: project-contour
+    repository: file://../../apps/project-contour
+  - name: cert-manager
+    repository: file://../../apps/cert-manager
+  - name: monitoring
+    repository: file://../../apps/monitoring
+
+    

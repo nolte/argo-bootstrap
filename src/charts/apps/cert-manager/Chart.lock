@@ -1,0 +1,6 @@
+dependencies:
+- name: commonApp
+  repository: file://../../technical/commonApp/
+  version: 1.0.0
+digest: sha256:2ef3c2e27b60cd37e341ab82d540f9186da8007c9c453e8578dbe860ff38c2ea
+generated: "2021-01-31T14:20:20.615980418+01:00"

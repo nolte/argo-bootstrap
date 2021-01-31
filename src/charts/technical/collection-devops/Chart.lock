@@ -1,0 +1,9 @@
+dependencies:
+- name: project-contour
+  repository: file://../project-contour
+  version: 1.0.0
+- name: cert-manager
+  repository: file://../cert-manager
+  version: 1.0.0
+digest: sha256:af062302ae99170e73a75821ec240bdf31d8f2e9932996f2b36504cb342649b1
+generated: "2021-01-31T14:17:56.87529289+01:00"

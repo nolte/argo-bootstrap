@@ -1,0 +1,6 @@
+apiVersion: v2
+name: monitoring
+version: 1.0.0
+dependencies:
+  - name: commonApp
+    repository: file://../../technical/commonApp/

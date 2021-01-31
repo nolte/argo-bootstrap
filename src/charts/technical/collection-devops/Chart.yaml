@@ -1,0 +1,14 @@
+apiVersion: v2
+name: collection-devops
+version: 1.0.0
+dependencies:
+  - name: minio
+    repository: file://../../apps/minio
+  - name: argo-workflow
+    repository: file://../../apps/argo-workflow
+  - name: argocd-image-updater
+    repository: file://../../apps/argocd-image-updater
+  - name: argo-cd
+    repository: file://../../apps/argo-cd
+
+    
