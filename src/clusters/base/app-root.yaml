@@ -15,10 +15,10 @@ spec:
     #repoURL: https://nolte.github.io/argo-charts/
     #targetRevision: 1.2.0
     repoURL: https://github.com/nolte/argo-bootstrap
-    targetRevision: head
+    targetRevision: HEAD
     path: src/charts/technical/collection-baseline
     helm:
-      releaseName: contour
+      releaseName: baseline
       version: v3.5.1
   syncPolicy: {}
 #    automated: {}
