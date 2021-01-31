@@ -15,3 +15,12 @@ spec:
         monitoring:
           destination:
             name: kind-production
+        forecastle:
+          destination:
+            name: kind-production
+        konfigurator:
+          destination:
+            name: kind-production
+        reloader:
+          destination:
+            name: kind-production
