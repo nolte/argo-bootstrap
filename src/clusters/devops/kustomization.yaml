@@ -5,12 +5,15 @@ namePrefix: devops-
 namespace: argocd
 
 patches:
-#  - path: destination-patch.yaml
-#    target:
-#      kind: Application
   - path: sync-patch.yaml
     target:
       kind: Application
+  - path: patch-helm-release.yaml
+    target:
+      kind: Application
+      name: baseline
+
+
 
 resources:
   - ../base
