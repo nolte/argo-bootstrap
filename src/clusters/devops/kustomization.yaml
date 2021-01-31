@@ -13,5 +13,5 @@ patches:
       kind: Application
 
 resources:
-  #- ../base
+  - ../base
   - app-devops-tools.yaml
