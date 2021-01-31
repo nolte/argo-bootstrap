@@ -1,0 +1,5 @@
+argo-cd:
+  source:
+    helm:
+      valueFiles:
+        - values-bootstrap.yaml

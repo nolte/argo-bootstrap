@@ -1,7 +1,7 @@
 argo-cd:
   server:
     additionalApplications: 
-    - name: prd-baseline
+    - name: seed-prd
       namespace: argocd
       project: default
       source:
@@ -33,7 +33,7 @@ argo-cd:
           selfHeal: false
         syncOptions:
           - CreateNamespace=true
-    - name: devops
+    - name: seed-devops
       namespace: argocd
       project: default
       source:
