@@ -1,9 +1,12 @@
 dependencies:
 - name: project-contour
-  repository: file://../project-contour
+  repository: file://../../apps/project-contour
   version: 1.0.0
 - name: cert-manager
-  repository: file://../cert-manager
+  repository: file://../../apps/cert-manager
   version: 1.0.0
-digest: sha256:af062302ae99170e73a75821ec240bdf31d8f2e9932996f2b36504cb342649b1
-generated: "2021-01-31T14:17:56.87529289+01:00"
+- name: monitoring
+  repository: file://../../apps/monitoring
+  version: 1.0.0
+digest: sha256:cef3e902b126c0b3b5a853b2ccab548035c666c86e75e64221592bceadc21cdf
+generated: "2021-01-31T15:09:47.336184789+01:00"

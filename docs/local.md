@@ -11,13 +11,16 @@ kind create cluster \
   && kind create cluster \
     --config ./local/kind-public-apiserver.yaml \
     --name local-bootstrapper
-
-# Bootstrap Cluster
+```
+**Boostrap Cluster Context**
+```sh
 kubectl config use-context kind-local-bootstrapper
+```
 
-# "Production" Cluster
+**Production Cluster Context**
+
+```sh
 kubectl config use-context kind-production
-
 ```
 
 ### Argo
@@ -28,10 +31,10 @@ kubectl config use-context kind-production
 kubectl config use-context kind-local-bootstrapper
 
 helm upgrade \
-  -i argo-cd charts/argo-cd/ \
+  -i argo-cd src/charts/technical/argo-cd/ \
   -n argocd --create-namespace \
-  -f charts/argo-cd/values.yaml \
-  -f charts/argo-cd/values-bootstrap.yaml \
+  -f src/charts/technical/argo-cd/values.yaml \
+  -f src/charts/technical/argo-cd/values-bootstrap.yaml \
   --wait
 ```
 
