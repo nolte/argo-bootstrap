@@ -3,6 +3,7 @@ kind: Kustomization
 
 #https://kubectl.docs.kubernetes.io/references/kustomize/nameprefix/
 namePrefix: prod-
+namespace: argocd
 
 commonLabels:
   just-mfg.de/appgroup: prd
