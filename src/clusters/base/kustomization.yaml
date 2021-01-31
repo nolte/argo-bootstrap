@@ -6,6 +6,5 @@ namespace: argocd
 commonLabels:
   just-mfg.de/appgroup: baseline
 
-
 resources:
   - app-root.yaml

@@ -6,13 +6,21 @@ tasks:
   create:
     desc: create clusters
     cmds:
-    - kind create cluster \
+    - |
+      kind create cluster \
       --config {{.GIT_ROOT}}/local/kind.yaml \
       --name production \
-    - kind create cluster \
+      && kind create cluster \
         --config {{.GIT_ROOT}}/local/kind-public-apiserver.yaml \
         --name local-bootstrapper
     silent: true
 
 
 
+  destroy:
+    desc: destroy clusters
+    cmds:
+    - |
+      kind delete cluster --name production | true \
+        && kind delete cluster --name local-bootstrapper | true
+    silent: true

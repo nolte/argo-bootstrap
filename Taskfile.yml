@@ -8,8 +8,21 @@ vars:
 includes:
   kind: .taskfiles/Taskfile_kind.yml
   boostrap: .taskfiles/Taskfile_bootstrap.yml
+  argo: .taskfiles/Taskfile_argo.yml
 
 tasks:
+  recreatecluster:
+    desc: Recreate the Cluster
+    silent: true
+    cmds:
+    - echo "cluster Recreated"
+    deps:
+      - kind:destroy
+      - kind:create
+      - boostrap:boostrap-argocd
+      - argo:portorward
+      - argo:login
+      - argo:addcluster
   default:
     cmds:
     - task -l

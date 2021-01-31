@@ -1,5 +1,15 @@
 # Local Dev Env
 
+```
+task \
+  kind:destroy \
+  kind:create \
+  boostrap:boostrap-argocd \
+  argo:portorward \
+  argo:login \
+  argo:addcluster
+```
+
 ## Start 
 
 Wir Starten 2 Lokale k8s Cluster.

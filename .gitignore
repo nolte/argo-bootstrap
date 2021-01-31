@@ -1,2 +1,5 @@
+# Helm resources
+src/charts/**/Chart.lock
 src/charts/**/charts
+
 .back

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: baseline
+  name: tools
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -12,9 +12,9 @@ spec:
   source:
     repoURL: https://github.com/nolte/argo-bootstrap
     targetRevision: HEAD
-    path: src/charts/technical/collection-baseline
+    path: src/charts/technical/collection-devops
     helm:
-      releaseName: baseline
+      releaseName: devops-tools
       version: v3.5.1
   syncPolicy: {}
 #    automated: {}

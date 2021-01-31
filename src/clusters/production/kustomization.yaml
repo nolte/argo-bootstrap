@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+#https://kubectl.docs.kubernetes.io/references/kustomize/nameprefix/
+namePrefix: prod-
+
+commonLabels:
+  just-mfg.de/appgroup: prd
+
+patches:
+  - path: destination-patch.yaml
+    target:
+      kind: Application
+  - path: sync-patch.yaml
+    target:
+      kind: Application
+
+resources:
+  - ../base

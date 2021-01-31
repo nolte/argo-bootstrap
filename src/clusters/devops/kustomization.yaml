@@ -2,11 +2,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namePrefix: devops-
+namespace: argocd
 
 patches:
-  - path: destination-patch.yaml
+#  - path: destination-patch.yaml
+#    target:
+#      kind: Application
+  - path: sync-patch.yaml
     target:
       kind: Application
 
 resources:
-  - ../base
+  #- ../base
+  - app-devops-tools.yaml
