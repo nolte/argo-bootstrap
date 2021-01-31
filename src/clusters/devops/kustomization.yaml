@@ -13,8 +13,6 @@ patches:
       kind: Application
       name: baseline
 
-
-
 resources:
   - ../base
   - app-devops-tools.yaml

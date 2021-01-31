@@ -10,7 +10,7 @@ dependencies:
     version: 1.3.0
   - name: argocd-image-updater
     repository: https://nolte.github.io/argo-charts/
-    version: 1.2.1
+    version: 1.2.2
   - name: argo-cd
     repository: https://nolte.github.io/argo-charts/
     version: 1.3.0
