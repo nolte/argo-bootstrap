@@ -3,5 +3,16 @@ kind: Application
 metadata:
   name: anyName
 spec:
-  destination:
+  source:
+    helm:
+      values: |
+        project-contour:
+          destination:
+            name: kind-production
+        cert-manager:
+          destination:
+            name: kind-production
+        monitoring:
+          destination:
+            name: kind-production
     name: kind-production
