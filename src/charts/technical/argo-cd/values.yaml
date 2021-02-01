@@ -124,3 +124,15 @@ argo-cd:
         - type: helm
           url: https://mojo2600.github.io/pihole-kubernetes/
           name: pihole
+        - type: helm
+          url: https://kubernetes-charts.banzaicloud.com
+          name: banzaicloud-stable
+        - type: helm
+          url: https://helm.goharbor.io
+          name: harbor
+        - type: helm
+          url: https://codecentric.github.io/helm-charts
+          name: codecentric
+        - type: helm
+          url: https://vmware-tanzu.github.io/helm-charts
+          name: vmware-tanzu
