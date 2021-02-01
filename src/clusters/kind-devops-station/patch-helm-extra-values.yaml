@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: baseline
+spec:
+  source:
+    helm:
+      values: |
+        forecastle:
+          forecastle:
+            enabled: true
+            hosts:
+              - host: forecastle.172-17-0-1.sslip.io
+                paths:
+                - /

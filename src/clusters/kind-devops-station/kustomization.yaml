@@ -4,13 +4,13 @@ kind: Kustomization
 namespace: argocd
 
 patches:
-  - path: sync-patch.yaml
-    target:
-      kind: Application
-  #- path: patch-helm-release.yaml
+  #- path: sync-patch.yaml
   #  target:
   #    kind: Application
-  #    name: baseline
+  - path: patch-helm-extra-values.yaml
+    target:
+      kind: Application
+      name: baseline
 
 resources:
   - ../base
