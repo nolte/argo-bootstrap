@@ -16,7 +16,7 @@ dependencies:
     version: 1.6.1
   - name: forecastle
     repository: https://nolte.github.io/argo-charts/
-    version: 1.6.1
+    version: 1.6.2
   - name: konfigurator
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.2
