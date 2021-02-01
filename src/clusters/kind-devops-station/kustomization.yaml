@@ -14,5 +14,5 @@ patches:
 
 resources:
   - ../base
-  - ../devops
+  #- ../devops
   - cluster-issuer.yaml
