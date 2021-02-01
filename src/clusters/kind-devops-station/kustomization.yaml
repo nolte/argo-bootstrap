@@ -16,3 +16,4 @@ resources:
   - ../base
   #- ../devops
   - cluster-issuer.yaml
+  #- argo.yaml
