@@ -13,10 +13,10 @@ dependencies:
     version: 1.6.0
   - name: reloader
     repository: https://nolte.github.io/argo-charts/
-    version: 1.6.1
+    version: 1.6.2
   - name: forecastle
     repository: https://nolte.github.io/argo-charts/
-    version: 1.6.2
+    version: 1.6.3
   - name: konfigurator
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.2
