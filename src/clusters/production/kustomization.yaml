@@ -9,9 +9,9 @@ commonLabels:
   just-mfg.de/appgroup: prd
 
 patches:
-  - path: destination-patch.yaml
-    target:
-      kind: Application
+  #- path: destination-patch.yaml
+  #  target:
+  #    kind: Application
   - path: sync-patch.yaml
     target:
       kind: Application
