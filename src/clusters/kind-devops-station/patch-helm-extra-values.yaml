@@ -6,13 +6,22 @@ spec:
   source:
     helm:
       values: |
+        cert-manager:
+          source:
+            helm:
+              values: |
+                ingressShim:
+                  defaultIssuerName: "cluster-issuer"
+                  defaultIssuerKind: "ClusterIssuer"
+                  defaultIssuerGroup: "cert-manager.io/v1"
         forecastle:
           source:
             helm:
-              values: |        
+              values: |
                 forecastle:
-                  enabled: true
-                  hosts:
-                    - host: forecastle.172-17-0-1.sslip.io
-                      paths:
-                      - /
+                  ingress:
+                    enabled: true
+                    hosts:
+                      - host: forecastle.172-17-0-1.sslip.io
+                        paths:
+                        - /
