@@ -31,7 +31,7 @@ spec:
                     tls:
                       - hosts:
                           - forecastle.172-17-0-1.sslip.io
-                        secretName: forecastle-tls
+                        secretName: forecastle-cert
                     hosts:
                       - host: forecastle.172-17-0-1.sslip.io
                         paths:
