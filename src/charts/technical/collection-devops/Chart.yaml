@@ -20,6 +20,6 @@ dependencies:
   - name: harbor
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.0
-  - name: keycloak
-    repository: https://nolte.github.io/argo-charts/
-    version: 1.6.0
+#  - name: keycloak
+#    repository: https://nolte.github.io/argo-charts/
+#    version: 1.6.0
