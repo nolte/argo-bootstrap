@@ -8,10 +8,13 @@ spec:
       values: |
         cert-manager:
           source:
-            helm:
-              valueFiles:
-                - chart-values.yaml            
-              values: |           
+            helm:        
+              values: |
+                installCRDs: true
+                prometheus:
+                  enabled: true
+                  servicemonitor:
+                    enabled: true
                 ingressShim:
                   defaultIssuerName: "cluster-issuer"
                   defaultIssuerKind: "ClusterIssuer"
@@ -23,6 +26,8 @@ spec:
                 forecastle:
                   ingress:
                     enabled: true
+                    annotations:
+                      cert-manager.io/cluster-issuer: cluster-issuer
                     tls:
                       - hosts:
                           - forecastle.172-17-0-1.sslip.io
