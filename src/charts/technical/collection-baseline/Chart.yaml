@@ -7,7 +7,7 @@ dependencies:
     version: 1.6.0
   - name: cert-manager
     repository: https://nolte.github.io/argo-charts/
-    version: 1.6.1
+    version: 1.6.2
   - name: monitoring
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.0
