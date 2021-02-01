@@ -1,4 +1,5 @@
 argo-cd:
+  fullnameOverride: "argocd"
   source:
     helm:
       valueFiles:
