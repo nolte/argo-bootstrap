@@ -90,6 +90,7 @@ argo-cd:
           ignoreDifferences: |
             jsonPointers:
             - /webhooks/0/failurePolicy
+            - /webhooks/0/clientConfig/caBundle
         admissionregistration.k8s.io/ValidatingWebhookConfiguration:
           ignoreDifferences: |
             jsonPointers:
@@ -99,6 +100,7 @@ argo-cd:
             jsonPointers:
             - /spec/0/preserveUnknownFields
             - /spec/preserveUnknownFields
+      
       repositories: |
         - type: helm
           url: https://argoproj.github.io/argo-helm
@@ -136,3 +138,6 @@ argo-cd:
         - type: helm
           url: https://vmware-tanzu.github.io/helm-charts
           name: vmware-tanzu
+        - type: helm
+          url: https://helm.releases.hashicorp.com
+          name: hashicorp

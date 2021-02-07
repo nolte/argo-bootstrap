@@ -35,6 +35,12 @@ kubectl config use-context kind-production
 
 ### Argo
 
+```sh
+kubectl port-forward svc/argocd-server 8080:443 -n argo-server
+```
+
+### ArgoCD
+
 #### Install
 
 ```
@@ -51,7 +57,7 @@ helm upgrade \
 #### PortForward
 
 ```
-kubectl port-forward svc/argo-cd-argocd-server 8080:443 -n argocd
+kubectl port-forward svc/argocd-server 8080:443 -n argocd
 ```
 
 #### Login

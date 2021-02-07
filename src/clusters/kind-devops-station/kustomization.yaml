@@ -4,9 +4,9 @@ kind: Kustomization
 namespace: argocd
 
 patches:
-  #- path: sync-patch.yaml
-  #  target:
-  #    kind: Application
+  - path: sync-patch.yaml
+    target:
+      kind: Application
   - path: patch-helm-extra-values.yaml
     target:
       kind: Application
@@ -17,3 +17,4 @@ resources:
   #- ../devops
   - cluster-issuer.yaml
   #- argo.yaml
+  - argo.yaml 

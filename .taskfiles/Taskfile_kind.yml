@@ -4,23 +4,47 @@ version: '3'
 tasks:
 
   create:
+    deps:
+      - create_bootstrapper
+      - create_prod
+    silent: true
+
+  create_bootstrapper:
+    desc: create clusters
+    cmds:
+    - |
+      kind create cluster \
+        --config {{.GIT_ROOT}}/local/kind-public-apiserver.yaml \
+        --name local-bootstrapper
+    silent: true
+
+  create_prod:
     desc: create clusters
     cmds:
     - |
       kind create cluster \
       --config {{.GIT_ROOT}}/local/kind.yaml \
-      --name production \
-      && kind create cluster \
-        --config {{.GIT_ROOT}}/local/kind-public-apiserver.yaml \
-        --name local-bootstrapper
+      --name production 
     silent: true
-
 
 
   destroy:
     desc: destroy clusters
+    deps:
+    - destroy_bootstrapper
+    - destroy_prod
+    silent: true
+
+  destroy_bootstrapper:
+    desc: create clusters
     cmds:
     - |
-      kind delete cluster --name production | true \
-        && kind delete cluster --name local-bootstrapper | true
+      kind delete cluster --name local-bootstrapper
+    silent: true
+
+  destroy_prod:
+    desc: create clusters
+    cmds:
+    - |
+      kind delete cluster --name production
     silent: true

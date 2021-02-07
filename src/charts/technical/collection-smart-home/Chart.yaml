@@ -2,16 +2,16 @@ apiVersion: v2
 name: collection-smart-home
 version: 1.0.0
 dependencies:
-  - name: home-assistant
+  - name: argocd-home-assistant
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.0
-  - name: node-red
+  - name: argocd-node-red
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.0
-  - name: pihole
+  - name: argocd-pihole
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.0
-  - name: mosquitto
+  - name: argocd-mosquitto
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.0
 

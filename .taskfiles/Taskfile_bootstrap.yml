@@ -8,10 +8,10 @@ tasks:
     cmds:
     - |
       helm upgrade \
-        -i argo-cd {{.GIT_ROOT}}/src/charts/technical/argo-cd/ \
+        -i argocd {{.GIT_ROOT}}/src/charts/technical/argo-cd/ \
         -n argocd --create-namespace \
         -f {{.GIT_ROOT}}/src/charts/technical/argo-cd/values.yaml \
-        -f {{.GIT_ROOT}}/src/charts/technical/argo-cd/values-bootstrap.yaml \
+        -f {{.GIT_ROOT}}/src/charts/technical/argo-cd/values-bootstrap-kind.yaml \
         --wait
     silent: true
 

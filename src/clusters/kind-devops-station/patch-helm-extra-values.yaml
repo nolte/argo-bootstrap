@@ -15,10 +15,10 @@ spec:
                   enabled: true
                   servicemonitor:
                     enabled: true
-                ingressShim:
-                  defaultIssuerName: "cluster-issuer"
-                  defaultIssuerKind: "ClusterIssuer"
-                  defaultIssuerGroup: "cert-manager.io/v1"
+                #ingressShim:
+                #  defaultIssuerName: "cluster-issuer"
+                #  defaultIssuerKind: "ClusterIssuer"
+                #  defaultIssuerGroup: "cert-manager.io"
         forecastle:
           source:
             helm:
@@ -27,6 +27,7 @@ spec:
                   ingress:
                     enabled: true
                     annotations:
+                      ingress.kubernetes.io/force-ssl-redirect: "true"
                       cert-manager.io/cluster-issuer: cluster-issuer
                     tls:
                       - hosts:

@@ -1,0 +1,23 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: argocd-test-  # Name of this Workflow
+spec:
+  entrypoint: sign-in 
+  templates:  
+    - name: sign-in
+      script:
+         image: argoproj/argocd
+         command: [bash]       
+         source: |
+          #!/bin/bash
+
+          argocd login argocd-server.argocd.svc \
+            --insecure \
+            --username admin \
+            --password argocd-server-7ddcbc6ccf-lw29b 
+
+          argocd app create argo-vault --repo https://nolte.github.io/argo-charts/ --dest-name in-cluster --helm-chart vault --revision 1.6.0  --dest-namespace argocd
+          # argocd app sync argo-vault
+          # argocd app wait vault

@@ -1,22 +1,62 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: seed-argo
+  name: argo
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: in-cluster
-    namespace: argocd
+    namespace: argo-workflow
   project: seed
   source:
-    repoURL: https://nolte.github.io/argo-charts/
-    targetRevision: 1.6.0
-    chart: argo-cd
+    repoURL: https://argoproj.github.io/argo-helm
+    targetRevision: 0.15.4
+    chart: argo
     helm:
-      releaseName: argocd
-      version: v3.5.1
-  syncPolicy: {}
+      releaseName: argo
+      values: |
+        #images:
+        #  tag: v2.17.5
+        controller.workflowNamespaces:
+          default:
+          argo-workflow:
+          operators:
+      parameters:
+        - name: workflow.namespace
+          value: "argo-workflow"
+        - name: workflow.rbac.create
+          value: "true"
+        - name: workflow.serviceAccount.create
+          value: "true"
+        - name: controller.containerRuntimeExecutor
+          value: "k8sapi"
+        #- name: controller.workflowNamespaces[1]
+        #  value: "argo-workflow"
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
+---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: seed-argo
+#  finalizers:
+#  - resources-finalizer.argocd.argoproj.io
+#spec:
+#  destination:
+#    name: in-cluster
+#    namespace: argocd
+#  project: seed
+#  source:
+#    repoURL: https://nolte.github.io/argo-charts/
+#    targetRevision: 1.6.0
+#    chart: argo-workflow
+#    helm:
+#      releaseName: argo
+#  syncPolicy: {}
 #    automated: {}
 #      prune: true
 #      selfHeal: true

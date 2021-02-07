@@ -7,7 +7,7 @@ tasks:
     desc: start portorward
     cmds:
     - |
-      screen -S "argo-portorward" -d -m kubectl port-forward svc/argo-cd-argocd-server 8080:443 -n argocd
+      screen -S "argo-portorward" -d -m kubectl port-forward svc/argocd-server 8080:443 -n argocd
     silent: true
   portorwardstop:
     desc: stop portorward

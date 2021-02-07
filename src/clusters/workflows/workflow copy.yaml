@@ -1,0 +1,32 @@
+# https://www.vaultproject.io/docs/commands/operator/unseal
+# https://www.vaultproject.io/docs/platform/k8s/helm/run
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: argocd-test-  # Name of this Workflow
+spec:
+  entrypoint: unseal       # Defines "whalesay" as the "main" template
+  templates:
+    - name: unseal
+      container:
+        volumeMounts:
+          - name: out
+            mountPath: /mnt/out
+      outputs:
+        artifacts:
+          - name: message
+            path: /mnt/out/message    
+      volumes:
+        - name: out
+          emptyDir: { }             
+      steps:    
+        - - name: select-pods
+            template: get-po
+
+   
+    - name: get-pods
+      script:
+         image: argoproj/argocd
+         command: [bash]       
+         source: |
+          argocd login argocd-server.argocd.svc --insecure --username admin --password argocd-server-7ddcbc6ccf-lw29b && env && cat /var/run/secrets/kubernetes.io/serviceaccount
