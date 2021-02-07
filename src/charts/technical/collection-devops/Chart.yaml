@@ -4,7 +4,7 @@ version: 1.0.0
 dependencies:
   - name: argocd-minio
     repository: https://nolte.github.io/argo-charts/
-    version: 1.6.0
+    version: 1.7.0
   - name: argocd-argo-workflow
     repository: https://nolte.github.io/argo-charts/
     version: 1.6.1
@@ -13,19 +13,19 @@ dependencies:
     version: 1.6.1
   - name: argocd-argocd-image-updater
     repository: https://nolte.github.io/argo-charts/
-    version: 1.6.0
-  - name: argocd-argo-cd
-    repository: https://nolte.github.io/argo-charts/
-    version: 1.6.0
-  - name: argocd-vault-operator
-    repository: https://nolte.github.io/argo-charts/
-    version: 1.6.0
-  - name: argocd-harbor
-    repository: https://nolte.github.io/argo-charts/
-    version: 1.6.0
+    version: 1.7.0
+#  - name: argocd-argo-cd
+#    repository: https://nolte.github.io/argo-charts/
+#    version: 1.6.0
+#  - name: argocd-vault-operator
+#    repository: https://nolte.github.io/argo-charts/
+#    version: 1.6.0
+#  - name: argocd-harbor
+#    repository: https://nolte.github.io/argo-charts/
+#    version: 1.6.0
   - name: argocd-vault
     repository: https://nolte.github.io/argo-charts/
-    version: 1.6.2
+    version: 1.6.5
 #  - name: keycloak
 #    repository: https://nolte.github.io/argo-charts/
 #    version: 1.6.0
